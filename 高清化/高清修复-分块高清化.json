@@ -1,0 +1,768 @@
+{
+  "last_node_id": 21,
+  "last_link_id": 33,
+  "nodes": [
+    {
+      "id": 16,
+      "type": "CM_NearestSDXLResolution",
+      "pos": [
+        360,
+        443
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 17,
+          "label": "图像"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [
+            22
+          ],
+          "shape": 3,
+          "label": "宽度",
+          "slot_index": 0
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            23
+          ],
+          "shape": 3,
+          "label": "高度",
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CM_NearestSDXLResolution"
+      }
+    },
+    {
+      "id": 18,
+      "type": "PrimitiveNode",
+      "pos": [
+        368,
+        663
+      ],
+      "size": {
+        "0": 210,
+        "1": 82
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            19,
+            21
+          ],
+          "widget": {
+            "name": "b"
+          },
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Run widget replace on values": false
+      },
+      "widgets_values": [
+        4,
+        "fixed"
+      ]
+    },
+    {
+      "id": 17,
+      "type": "CM_IntBinaryOperation",
+      "pos": [
+        654,
+        443
+      ],
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "a",
+          "type": "INT",
+          "link": 22,
+          "widget": {
+            "name": "a"
+          },
+          "slot_index": 0,
+          "label": "A"
+        },
+        {
+          "name": "b",
+          "type": "INT",
+          "link": 19,
+          "widget": {
+            "name": "b"
+          },
+          "label": "B"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            30
+          ],
+          "shape": 3,
+          "label": "整数",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CM_IntBinaryOperation"
+      },
+      "widgets_values": [
+        "Mul",
+        4,
+        4
+      ]
+    },
+    {
+      "id": 19,
+      "type": "CM_IntBinaryOperation",
+      "pos": [
+        647,
+        662
+      ],
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "a",
+          "type": "INT",
+          "link": 23,
+          "widget": {
+            "name": "a"
+          },
+          "slot_index": 0,
+          "label": "A"
+        },
+        {
+          "name": "b",
+          "type": "INT",
+          "link": 21,
+          "widget": {
+            "name": "b"
+          },
+          "label": "B"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            31
+          ],
+          "shape": 3,
+          "label": "整数",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CM_IntBinaryOperation"
+      },
+      "widgets_values": [
+        "Mul",
+        4,
+        4
+      ]
+    },
+    {
+      "id": 13,
+      "type": "CLIPTextEncode",
+      "pos": [
+        741,
+        -25
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 13,
+          "label": "CLIP"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            26
+          ],
+          "shape": 3,
+          "label": "条件",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 15,
+      "type": "RecommendedResCalc",
+      "pos": [
+        1021,
+        546
+      ],
+      "size": {
+        "0": 315,
+        "1": 162
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "desiredXSIZE",
+          "type": "INT",
+          "link": 30,
+          "widget": {
+            "name": "desiredXSIZE"
+          },
+          "label": "desiredXSIZE"
+        },
+        {
+          "name": "desiredYSIZE",
+          "type": "INT",
+          "link": 31,
+          "widget": {
+            "name": "desiredYSIZE"
+          },
+          "label": "desiredYSIZE"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "recomm width",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "label": "recomm width"
+        },
+        {
+          "name": "recomm height",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "label": "recomm height"
+        },
+        {
+          "name": "upscale factor",
+          "type": "FLOAT",
+          "links": [
+            29
+          ],
+          "shape": 3,
+          "label": "upscale factor",
+          "slot_index": 2
+        },
+        {
+          "name": "reverse upscale for 4x",
+          "type": "FLOAT",
+          "links": null,
+          "shape": 3,
+          "label": "reverse upscale for 4x"
+        },
+        {
+          "name": "reverse upscale for 2x",
+          "type": "FLOAT",
+          "links": null,
+          "shape": 3,
+          "label": "reverse upscale for 2x"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RecommendedResCalc"
+      },
+      "widgets_values": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": 10,
+      "type": "LoadImage",
+      "pos": [
+        -182,
+        130
+      ],
+      "size": [
+        407.6188610937502,
+        340.2883638159181
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            17,
+            24
+          ],
+          "shape": 3,
+          "label": "图像",
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3,
+          "label": "遮罩"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "WechatIMG78 (1).jpeg",
+        "image"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "SaveImage",
+      "pos": [
+        1613,
+        23
+      ],
+      "size": [
+        436.7219156323247,
+        494.182603208008
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 32,
+          "label": "图像"
+        }
+      ],
+      "properties": {},
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 21,
+      "type": "UpscaleModelLoader",
+      "pos": [
+        656,
+        321
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "UPSCALE_MODEL",
+          "type": "UPSCALE_MODEL",
+          "links": [
+            28
+          ],
+          "shape": 3,
+          "label": "放大模型"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UpscaleModelLoader"
+      },
+      "widgets_values": [
+        "RealESRGAN_x4.pth"
+      ]
+    },
+    {
+      "id": 11,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        181,
+        -204
+      ],
+      "size": {
+        "0": 315,
+        "1": 98
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            25
+          ],
+          "shape": 3,
+          "label": "模型",
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            13,
+            15
+          ],
+          "shape": 3,
+          "label": "CLIP",
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            33
+          ],
+          "shape": 3,
+          "label": "VAE",
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "albedobaseXL_v21.safetensors"
+      ]
+    },
+    {
+      "id": 20,
+      "type": "UltimateSDUpscale",
+      "pos": [
+        1002,
+        -319
+      ],
+      "size": {
+        "0": 315,
+        "1": 822
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 24,
+          "label": "图像"
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 25,
+          "label": "模型"
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 26,
+          "label": "正面条件"
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 27,
+          "label": "负面条件"
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 33,
+          "label": "VAE"
+        },
+        {
+          "name": "upscale_model",
+          "type": "UPSCALE_MODEL",
+          "link": 28,
+          "label": "放大模型",
+          "slot_index": 5
+        },
+        {
+          "name": "upscale_by",
+          "type": "FLOAT",
+          "link": 29,
+          "widget": {
+            "name": "upscale_by"
+          },
+          "label": "放大系数",
+          "slot_index": 6
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            32
+          ],
+          "shape": 3,
+          "label": "图像",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UltimateSDUpscale"
+      },
+      "widgets_values": [
+        2,
+        646308641730019,
+        "randomize",
+        30,
+        8,
+        "dpmpp_2m",
+        "karras",
+        0.25,
+        "Linear",
+        1024,
+        1024,
+        8,
+        32,
+        "None",
+        1,
+        64,
+        8,
+        16,
+        true,
+        false
+      ]
+    },
+    {
+      "id": 14,
+      "type": "CLIPTextEncode",
+      "pos": [
+        757,
+        55
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 15,
+          "label": "CLIP"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            27
+          ],
+          "shape": 3,
+          "label": "条件",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        ""
+      ]
+    }
+  ],
+  "links": [
+    [
+      13,
+      11,
+      1,
+      13,
+      0,
+      "CLIP"
+    ],
+    [
+      15,
+      11,
+      1,
+      14,
+      0,
+      "CLIP"
+    ],
+    [
+      17,
+      10,
+      0,
+      16,
+      0,
+      "IMAGE"
+    ],
+    [
+      19,
+      18,
+      0,
+      17,
+      1,
+      "INT"
+    ],
+    [
+      21,
+      18,
+      0,
+      19,
+      1,
+      "INT"
+    ],
+    [
+      22,
+      16,
+      0,
+      17,
+      0,
+      "INT"
+    ],
+    [
+      23,
+      16,
+      1,
+      19,
+      0,
+      "INT"
+    ],
+    [
+      24,
+      10,
+      0,
+      20,
+      0,
+      "IMAGE"
+    ],
+    [
+      25,
+      11,
+      0,
+      20,
+      1,
+      "MODEL"
+    ],
+    [
+      26,
+      13,
+      0,
+      20,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      27,
+      14,
+      0,
+      20,
+      3,
+      "CONDITIONING"
+    ],
+    [
+      28,
+      21,
+      0,
+      20,
+      5,
+      "UPSCALE_MODEL"
+    ],
+    [
+      29,
+      15,
+      2,
+      20,
+      6,
+      "FLOAT"
+    ],
+    [
+      30,
+      17,
+      0,
+      15,
+      0,
+      "INT"
+    ],
+    [
+      31,
+      19,
+      0,
+      15,
+      1,
+      "INT"
+    ],
+    [
+      32,
+      20,
+      0,
+      9,
+      0,
+      "IMAGE"
+    ],
+    [
+      33,
+      11,
+      2,
+      20,
+      4,
+      "VAE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}
